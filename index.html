@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMBER HUNTER | Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-container">
+
+        <!-- HOME SCREEN -->
+        <section id="homeScreen" class="screen">
+            <p class="eyebrow">✦ THE ARCADE EXPERIENCE ✦</p>
+            <h1>🎯 NUMBER HUNTER</h1>
+            <p>Think fast. Trust your instincts. Find the number.</p>
+
+            <div class="hunter-character">
+                <img src="images/neon-hunter.png" alt="Neon Hunter character">
+                <p>YOUR MISSION. FIND THE NUMBER.</p>
+            </div>
+
+<p class="difficulty-title">CHOOSE YOUR DIFFICULTY</p>
+
+<div class="difficulty-options" id="difficultyOptions">
+
+    <button type="button" class="difficulty-card"
+        data-difficulty="easy" aria-pressed="false">
+        <span class="difficulty-icon">🟢</span>
+        <span class="difficulty-name">EASY</span>
+        <span class="difficulty-range">1 – 50</span>
+        <span class="difficulty-attempts">10 attempts</span>
+    </button>
+
+    <button type="button" class="difficulty-card selected"
+        data-difficulty="medium" aria-pressed="true">
+        <span class="difficulty-icon">🟡</span>
+        <span class="difficulty-name">MEDIUM</span>
+        <span class="difficulty-range">1 – 100</span>
+        <span class="difficulty-attempts">7 attempts</span>
+    </button>
+
+    <button type="button" class="difficulty-card"
+        data-difficulty="hard" aria-pressed="false">
+        <span class="difficulty-icon">🔴</span>
+        <span class="difficulty-name">HARD</span>
+        <span class="difficulty-range">1 – 500</span>
+        <span class="difficulty-attempts">5 attempts</span>
+    </button>
+
+</div>
+
+
+            <button id="startButton">START HUNT →</button>
+            <button id="leaderboardButton" class="secondary-button">
+                🏆 LEADERBOARD
+            </button>
+        </section>
+
+        <!-- GAME SCREEN -->
+        <section id="gameScreen" class="screen" hidden>
+            <p class="eyebrow">✦ HUNT IN PROGRESS ✦</p>
+            <h1>NUMBER HUNTER</h1>
+
+            <p id="difficultyLabel">Difficulty: Medium</p>
+            <h2 id="rangeLabel">Guess between 1 and 100</h2>
+
+            <input
+                type="number"
+                id="guessInput"
+                placeholder="Your guess..."
+                min="1"
+                max="100"
+            >
+
+            <button id="guessButton">HUNT!</button>
+
+            <p id="message" aria-live="polite">
+                Ready to play?
+            </p>
+
+            <p id="attempts">Attempts left: 7</p>
+            <p id="score">🏆 Score: 0</p>
+
+            <button id="restartButton">↻ PLAY AGAIN</button>
+            <button id="backHomeButton" class="secondary-button">
+                ← HOME
+            </button>
+        </section>
+
+        <!-- LEADERBOARD SCREEN -->
+        <section id="leaderboardScreen" class="screen" hidden>
+            <p class="eyebrow">✦ YOUR PERSONAL RECORDS ✦</p>
+            <h1>🏆 LEADERBOARD</h1>
+            <p>Your best scores saved on this device.</p>
+
+            <ol id="leaderboardList">
+                <li>No scores yet. Start hunting!</li>
+            </ol>
+
+            <button id="leaderboardPlayButton">START HUNT →</button>
+            <button id="clearLeaderboardButton" class="secondary-button">
+                CLEAR RECORDS
+            </button>
+            <button id="leaderboardHomeButton" class="secondary-button">
+                ← HOME
+            </button>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
